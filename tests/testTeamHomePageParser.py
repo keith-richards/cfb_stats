@@ -128,10 +128,12 @@ class TestTeamHomePageParser(unittest.TestCase):
         self.assertEqual(self.team.penalties_yards, 826)
     def test_time_of_possession(self):
         self.assertEqual(self.team.time_of_possession, "31:28.17")
-    # def test_third_down_conversion_attempts(self):
-    #     self.assertEqual(self.team.third_down_conversion_attempts, 167)
-    # def test_third_down_conversions(self):
-    #     self.assertEqual(self.team.third_down_conversions, 64)
+    def test_third_down_conversion_percent(self):
+        self.assertEqual(self.team.third_down_conversion_percent, 38.32)
+    def test_third_down_conversion_attempts(self):
+        self.assertEqual(self.team.third_down_conversion_attempts, 167)
+    def test_third_down_conversions(self):
+        self.assertEqual(self.team.third_down_conversions, 64)
     # def test_fourth_down_conversion_attempts(self):
     #     self.assertEqual(self.team.fourth_down_conversion_attempts, 28)
     # def test_fourth_down_conversions(self):
@@ -229,10 +231,12 @@ class TestTeamHomePageParser(unittest.TestCase):
         self.assertEqual(self.team.penalties_yards_opp, 619)
     def test_time_of_possession_opp(self):
         self.assertEqual(self.team.time_of_possession_opp, "28:31.83")
-    # def test_third_down_conversion_attempts_opp(self):
-    #     self.assertEqual(self.team.third_down_conversion_attempts_opp, 164)
-    # def test_third_down_conversions_opp(self):
-    #     self.assertEqual(self.team.third_down_conversions_opp, 80)
+    def test_third_down_conversion_percent_opp(self):
+        self.assertEqual(self.team.third_down_conversion_percent_opp, 48.78)
+    def test_third_down_conversion_attempts_opp(self):
+        self.assertEqual(self.team.third_down_conversion_attempts_opp, 164)
+    def test_third_down_conversions_opp(self):
+        self.assertEqual(self.team.third_down_conversions_opp, 80)
     # def test_fourth_down_conversion_attempts_opp(self):
     #     self.assertEqual(self.team.fourth_down_conversion_attempts_opp, 18)
     # def test_fourth_down_conversions_opp(self):

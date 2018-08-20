@@ -20,6 +20,10 @@ class FloatParser(SimpleParser):
     def parse(self, data):
         setattr(self.team, self.name, float(data))
 
+class PercentParser(SimpleParser):
+    def parse(self, data):
+        setattr(self.team, self.name, float(data.strip('%')))
+
 class SplitParser(object):
     def __init__(self, names, team, _type, indexes):
         self.names = names
@@ -124,6 +128,12 @@ class TeamHomePageParser(HTMLParser):
             None,
             StringParser('time_of_possession', self.team),
             StringParser('time_of_possession_opp', self.team),
+            None,
+            PercentParser('third_down_conversion_percent', self.team),
+            PercentParser('third_down_conversion_percent_opp', self.team),
+            None,
+            SplitIntParser(['third_down_conversion_attempts', 'third_down_conversions'], self.team),
+            SplitIntParser(['third_down_conversion_attempts_opp', 'third_down_conversions_opp'], self.team),
 
         ]
 

@@ -8,7 +8,7 @@ class Team(object):
     def __init__(self):
         super().__init__()
         self.name = None
-        
+
         self.points_per_game = None
         self.games = None
         self.points_scored = None
@@ -48,8 +48,10 @@ class Team(object):
         self.penalties = None
         self.penalties_yards = None
         self.time_of_possession = None
+        self.third_down_conversion_percent = None
         self.third_down_conversion_attempts = None
         self.third_down_conversions = None
+        self.fourth_down_conversion_percent = None
         self.fourth_down_conversion_attempts = None
         self.fourth_down_conversions = None
         self.red_zone_attempts = None
@@ -99,8 +101,10 @@ class Team(object):
         self.penalties_opp = None
         self.penalties_yards_opp = None
         self.time_of_possession_opp = None
+        self.third_down_conversion_percent_opp = None
         self.third_down_conversion_attempts_opp = None
         self.third_down_conversions_opp = None
+        self.fourth_down_conversion_percent_opp = None
         self.fourth_down_conversion_attempts_opp = None
         self.fourth_down_conversions_opp = None
         self.red_zone_attempts_opp = None
@@ -111,4 +115,3 @@ class Team(object):
         self.pat_kicking_made_opp = None
         self.two_point_conversion_attempts_opp = None
         self.two_point_conversions_made_opp = None
-
