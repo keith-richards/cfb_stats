@@ -1,49 +1,250 @@
-
-import sys
-
 import unittest
-from unittest.mock import MagicMock
+from cfb_stats.parse.team_home_page_parser import TeamHomePageParser
 
-sys.path.append("../")
-from parsers import TeamHomePageParser
-from parsers import SplitIntParser
-
-class TestSplitIntParser(unittest.TestCase):
-    def test_split_int_short(self):
-        data = '0 - 12 - 273'
-        o = MagicMock()
-        p = SplitIntParser(['k', 'e'], o, [1,2])
-        p.parse(data)
-        self.assertEqual(o.k, 12)
-        self.assertEqual(o.e, 273)
-
-    def test_split_int_reverse(self):
-        data = '12 - 273'
-        o = MagicMock()
-        p = SplitIntParser(['k', 'e'], o, [1,0])
-        p.parse(data)
-        self.assertEqual(o.k, 273)
-        self.assertEqual(o.e, 12)
-
-    def test_split_int_middle(self):
-        data = '12 - 273 - 0'
-        o = MagicMock()
-        p = SplitIntParser(['k'], o, [1])
-        p.parse(data)
-        self.assertEqual(o.k, 273)
-
-    def test_split_int_only(self):
-        data = '12'
-        o = MagicMock()
-        p = SplitIntParser(['e'], o)
-        p.parse(data)
-        self.assertEqual(o.e, 12)
-
-class TestTeamHomePageParser(unittest.TestCase):
+class TestTeamHomePageParserEastCarolina(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.parser = TeamHomePageParser()
-        with open("team_home_page.html", "r") as f:
+        with open("east_carolina_home.html", "r") as f:
+            for line in f.readlines():
+                cls.parser.feed(line)
+        cls.team = cls.parser.team
+
+    def test_name(self):
+        self.assertEqual(self.team.name, "East Carolina")
+    def test_points_per_game(self):
+        self.assertEqual(self.team.points_per_game, 24.9)
+    def test_games(self):
+        self.assertEqual(self.team.games, 12)
+    def test_points_scored(self):
+        self.assertEqual(self.team.points_scored, 299)
+    def test_first_downs(self):
+        self.assertEqual(self.team.first_downs, 279)
+    def test_rushing_first_downs(self):
+        self.assertEqual(self.team.rushing_first_downs, 72)
+    def test_passing_first_downs(self):
+        self.assertEqual(self.team.passing_first_downs, 172)
+    def test_penalty_first_downs(self):
+        self.assertEqual(self.team.penalty_first_downs, 35)
+    def test_rushing_yards_per_attempt(self):
+        self.assertEqual(self.team.rushing_yards_per_attempt, 3.26)
+    def test_rushing_attempts(self):
+        self.assertEqual(self.team.rushing_attempts, 396)
+    def test_rushing_yards(self):
+        self.assertEqual(self.team.rushing_yards, 1292)
+    def test_rushing_tds(self):
+        self.assertEqual(self.team.rushing_tds, 10)
+    def test_passing_rating(self):
+        self.assertEqual(self.team.passing_rating, 125.47)
+    def test_passing_yards(self):
+        self.assertEqual(self.team.passing_yards, 3815)
+    def test_passing_attempts(self):
+        self.assertEqual(self.team.passing_attempts, 543)
+    def test_passing_completions(self):
+        self.assertEqual(self.team.passing_completions, 307)
+    def test_passing_interceptions(self):
+        self.assertEqual(self.team.passing_interceptions, 16)
+    def test_passing_tds(self):
+        self.assertEqual(self.team.passing_tds, 26)
+    def test_total_offense_yards_per_play(self):
+        self.assertEqual(self.team.total_offense_yards_per_play, 5.44)
+    def test_total_offense_plays(self):
+        self.assertEqual(self.team.total_offense_plays, 939)
+    def test_total_offense_yards(self):
+        self.assertEqual(self.team.total_offense_yards, 5107)
+    def test_punt_return_yards_per_return(self):
+        self.assertEqual(self.team.punt_return_yards_per_return, -0.67)
+    def test_punt_return_yards(self):
+        self.assertEqual(self.team.punt_return_yards, -4)
+    def test_punt_return_returns(self):
+        self.assertEqual(self.team.punt_return_returns, 6)
+    def test_punt_return_tds(self):
+        self.assertEqual(self.team.punt_return_tds, 0)
+    def test_kickoff_return_yards_per_return(self):
+        self.assertEqual(self.team.kickoff_return_yards_per_return, 19.95)
+    def test_kickoff_return_yards(self):
+        self.assertEqual(self.team.kickoff_return_yards, 878)
+    def test_kickoff_return_returns(self):
+        self.assertEqual(self.team.kickoff_return_returns, 44)
+    def test_kickoff_return_tds(self):
+        self.assertEqual(self.team.kickoff_return_tds, 0)
+    def test_punting_yards_per_punt(self):
+        self.assertEqual(self.team.punting_yards_per_punt, 43.62)
+    def test_punting_punts(self):
+        self.assertEqual(self.team.punting_punts, 53)
+    def test_punting_yards(self):
+        self.assertEqual(self.team.punting_yards, 2312)
+    def test_interception_returns(self):
+        self.assertEqual(self.team.interception_returns, 7)
+    def test_interception_yards(self):
+        self.assertEqual(self.team.interception_yards, 72)
+    def test_interception_tds(self):
+        self.assertEqual(self.team.interception_tds, 0)
+    def test_fumbles(self):
+        self.assertEqual(self.team.fumbles, 12)
+    def test_fumbles_lost(self):
+        self.assertEqual(self.team.fumbles_lost, 5)
+    def test_penalties(self):
+        self.assertEqual(self.team.penalties, 80)
+    def test_penalties_yards(self):
+        self.assertEqual(self.team.penalties_yards, 705)
+    def test_time_of_possession(self):
+        self.assertEqual(self.team.time_of_possession, "31:11.33")
+    def test_third_down_conversion_percent(self):
+        self.assertEqual(self.team.third_down_conversion_percent, 41.21)
+    def test_third_down_conversion_attempts(self):
+        self.assertEqual(self.team.third_down_conversion_attempts, 199)
+    def test_third_down_conversions(self):
+        self.assertEqual(self.team.third_down_conversions, 82)
+    def test_fourth_down_conversion_percent(self):
+        self.assertEqual(self.team.fourth_down_conversion_percent, 58.62)
+    def test_fourth_down_conversion_attempts(self):
+        self.assertEqual(self.team.fourth_down_conversion_attempts, 29)
+    def test_fourth_down_conversions(self):
+        self.assertEqual(self.team.fourth_down_conversions, 17)
+    def test_red_zone_success_percent(self):
+        self.assertEqual(self.team.red_zone_success_percent, 75.0)
+    def test_red_zone_attempts(self):
+        self.assertEqual(self.team.red_zone_attempts, 44)
+    def test_red_zone_scores(self):
+        self.assertEqual(self.team.red_zone_scores, 33)
+    def test_field_goal_success_percent(self):
+        self.assertEqual(self.team.field_goal_success_percent, 64.0)
+    def test_field_goal_attempts(self):
+        self.assertEqual(self.team.field_goal_attempts, 25)
+    def test_field_goals(self):
+        self.assertEqual(self.team.field_goals, 16)
+    def test_pat_kicking_success_percent(self):
+        self.assertEqual(self.team.pat_kicking_success_percent, 97.2)
+    def test_pat_kicking_attempts(self):
+        self.assertEqual(self.team.pat_kicking_attempts, 36)
+    def test_pat_kicking_made(self):
+        self.assertEqual(self.team.pat_kicking_made, 35)
+    def test_two_point_conversion_success_percent(self):
+        self.assertEqual(self.team.two_point_conversion_success_percent, 0.0)
+    def test_two_point_conversion_attempts(self):
+        self.assertEqual(self.team.two_point_conversion_attempts, 0)
+    def test_two_point_conversions_made(self):
+        self.assertEqual(self.team.two_point_conversions_made, 0)
+
+    def test_points_per_game_opp(self):
+        self.assertEqual(self.team.points_per_game_opp, 45.0)
+    def test_points_scored_opp(self):
+        self.assertEqual(self.team.points_scored_opp, 540)
+    def test_first_downs_opp(self):
+        self.assertEqual(self.team.first_downs_opp, 296)
+    def test_rushing_first_downs_opp(self):
+        self.assertEqual(self.team.rushing_first_downs_opp, 140)
+    def test_passing_first_downs_opp(self):
+        self.assertEqual(self.team.passing_first_downs_opp, 136)
+    def test_penalty_first_downs_opp(self):
+        self.assertEqual(self.team.penalty_first_downs_opp, 20)
+    def test_rushing_yards_per_attempt_opp(self):
+        self.assertEqual(self.team.rushing_yards_per_attempt_opp, 5.88)
+    def test_rushing_attempts_opp(self):
+        self.assertEqual(self.team.rushing_attempts_opp, 501)
+    def test_rushing_yards_opp(self):
+        self.assertEqual(self.team.rushing_yards_opp, 2946)
+    def test_rushing_tds_opp(self):
+        self.assertEqual(self.team.rushing_tds_opp, 36)
+    def test_passing_rating_opp(self):
+        self.assertEqual(self.team.passing_rating_opp, 180.0)
+    def test_passing_yards_opp(self):
+        self.assertEqual(self.team.passing_yards_opp, 3554)
+    def test_passing_attempts_opp(self):
+        self.assertEqual(self.team.passing_attempts_opp, 341)
+    def test_passing_completions_opp(self):
+        self.assertEqual(self.team.passing_completions_opp, 227)
+    def test_passing_interceptions_opp(self):
+        self.assertEqual(self.team.passing_interceptions_opp, 7)
+    def test_passing_tds_opp(self):
+        self.assertEqual(self.team.passing_tds_opp, 31)
+    def test_total_offense_yards_per_play_opp(self):
+        self.assertEqual(self.team.total_offense_yards_per_play_opp, 7.72)
+    def test_total_offense_plays_opp(self):
+        self.assertEqual(self.team.total_offense_plays_opp, 842)
+    def test_total_offense_yards_opp(self):
+        self.assertEqual(self.team.total_offense_yards_opp, 6500)
+    def test_punt_return_yards_per_return_opp(self):
+        self.assertEqual(self.team.punt_return_yards_per_return_opp, 12.0)
+    def test_punt_return_yards_opp(self):
+        self.assertEqual(self.team.punt_return_yards_opp, 204)
+    def test_punt_return_returns_opp(self):
+        self.assertEqual(self.team.punt_return_returns_opp, 17)
+    def test_punt_return_tds_opp(self):
+        self.assertEqual(self.team.punt_return_tds_opp, 1)
+    def test_kickoff_return_yards_per_return_opp(self):
+        self.assertEqual(self.team.kickoff_return_yards_per_return_opp, 26.65)
+    def test_kickoff_return_yards_opp(self):
+        self.assertEqual(self.team.kickoff_return_yards_opp, 533)
+    def test_kickoff_return_returns_opp(self):
+        self.assertEqual(self.team.kickoff_return_returns_opp, 20)
+    def test_kickoff_return_tds_opp(self):
+        self.assertEqual(self.team.kickoff_return_tds_opp, 1)
+    def test_punting_yards_per_punt_opp(self):
+        self.assertEqual(self.team.punting_yards_per_punt_opp, 43.66)
+    def test_punting_punts_opp(self):
+        self.assertEqual(self.team.punting_punts_opp, 41)
+    def test_punting_yards_opp(self):
+        self.assertEqual(self.team.punting_yards_opp, 1790)
+    def test_interception_returns_opp(self):
+        self.assertEqual(self.team.interception_returns_opp, 16)
+    def test_interception_yards_opp(self):
+        self.assertEqual(self.team.interception_yards_opp, 236)
+    def test_interception_tds_opp(self):
+        self.assertEqual(self.team.interception_tds_opp, 4)
+    def test_fumbles_opp(self):
+        self.assertEqual(self.team.fumbles_opp, 10)
+    def test_fumbles_lost_opp(self):
+        self.assertEqual(self.team.fumbles_lost_opp, 4)
+    def test_penalties_opp(self):
+        self.assertEqual(self.team.penalties_opp, 93)
+    def test_penalties_yards_opp(self):
+        self.assertEqual(self.team.penalties_yards_opp, 931)
+    def test_time_of_possession_opp(self):
+        self.assertEqual(self.team.time_of_possession_opp, "28:48.67")
+    def test_third_down_conversion_percent_opp(self):
+        self.assertEqual(self.team.third_down_conversion_percent_opp, 52.0)
+    def test_third_down_conversion_attempts_opp(self):
+        self.assertEqual(self.team.third_down_conversion_attempts_opp, 150)
+    def test_third_down_conversions_opp(self):
+        self.assertEqual(self.team.third_down_conversions_opp, 78)
+    def test_fourth_down_conversion_percent_opp(self):
+        self.assertEqual(self.team.fourth_down_conversion_percent_opp, 61.54)
+    def test_fourth_down_conversion_attempts_opp(self):
+        self.assertEqual(self.team.fourth_down_conversion_attempts_opp, 13)
+    def test_fourth_down_conversions_opp(self):
+        self.assertEqual(self.team.fourth_down_conversions_opp, 8)
+    def test_red_zone_success_percent_opp(self):
+        self.assertEqual(self.team.red_zone_success_percent_opp, 89.29)
+    def test_red_zone_attempts_opp(self):
+        self.assertEqual(self.team.red_zone_attempts_opp, 56)
+    def test_red_zone_scores_opp(self):
+        self.assertEqual(self.team.red_zone_scores_opp, 50)
+    def test_field_goal_success_percent_opp(self):
+        self.assertEqual(self.team.field_goal_success_percent_opp, 64.7)
+    def test_field_goal_attempts_opp(self):
+        self.assertEqual(self.team.field_goal_attempts_opp, 17)
+    def test_field_goals_opp(self):
+        self.assertEqual(self.team.field_goals_opp, 11)
+    def test_pat_kicking_success_percent_opp(self):
+        self.assertEqual(self.team.pat_kicking_success_percent_opp, 95.8)
+    def test_pat_kicking_attempts_opp(self):
+        self.assertEqual(self.team.pat_kicking_attempts_opp, 72)
+    def test_pat_kicking_made_opp(self):
+        self.assertEqual(self.team.pat_kicking_made_opp, 69)
+    def test_two_point_conversion_success_percent_opp(self):
+        self.assertEqual(self.team.two_point_conversion_success_percent_opp, 0.0)
+    def test_two_point_conversion_attempts_opp(self):
+        self.assertEqual(self.team.two_point_conversion_attempts_opp, 1)
+    def test_two_point_conversions_made_opp(self):
+        self.assertEqual(self.team.two_point_conversions_made_opp, 0)
+
+class TestTeamHomePageParserHawaii(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.parser = TeamHomePageParser()
+        with open("hawaii_home.html", "r") as f:
             for line in f.readlines():
                 cls.parser.feed(line)
         cls.team = cls.parser.team
@@ -134,26 +335,36 @@ class TestTeamHomePageParser(unittest.TestCase):
         self.assertEqual(self.team.third_down_conversion_attempts, 167)
     def test_third_down_conversions(self):
         self.assertEqual(self.team.third_down_conversions, 64)
-    # def test_fourth_down_conversion_attempts(self):
-    #     self.assertEqual(self.team.fourth_down_conversion_attempts, 28)
-    # def test_fourth_down_conversions(self):
-    #     self.assertEqual(self.team.fourth_down_conversions, 10)
-    # def test_red_zone_attempts(self):
-    #     self.assertEqual(self.team.red_zone_attempts, 43)
-    # def test_red_zone_scores(self):
-    #     self.assertEqual(self.team.red_zone_scores, 30)
-    # def test_field_goal_attempts(self):
-    #     self.assertEqual(self.team.field_goal_attempts, 9)
-    # def test_field_goals(self):
-    #     self.assertEqual(self.team.field_goals, 4)
-    # def test_pat_kicking_attempts(self):
-    #     self.assertEqual(self.team.pat_kicking_attempts, 35)
-    # def test_pat_kicking_made(self):
-    #     self.assertEqual(self.team.pat_kicking_made, 33)
-    # def test_two_point_conversion_attempts(self):
-    #     self.assertEqual(self.team.two_point_conversion_attempts, 2)
-    # def test_two_point_conversions_made(self):
-    #     self.assertEqual(self.team.two_point_conversions_made, 1)
+    def test_fourth_down_conversion_percent(self):
+        self.assertEqual(self.team.fourth_down_conversion_percent, 35.71)
+    def test_fourth_down_conversion_attempts(self):
+        self.assertEqual(self.team.fourth_down_conversion_attempts, 28)
+    def test_fourth_down_conversions(self):
+        self.assertEqual(self.team.fourth_down_conversions, 10)
+    def test_red_zone_success_percent(self):
+        self.assertEqual(self.team.red_zone_success_percent, 69.77)
+    def test_red_zone_attempts(self):
+        self.assertEqual(self.team.red_zone_attempts, 43)
+    def test_red_zone_scores(self):
+        self.assertEqual(self.team.red_zone_scores, 30)
+    def test_field_goal_success_percent(self):
+        self.assertEqual(self.team.field_goal_success_percent, 44.4)
+    def test_field_goal_attempts(self):
+        self.assertEqual(self.team.field_goal_attempts, 9)
+    def test_field_goals(self):
+        self.assertEqual(self.team.field_goals, 4)
+    def test_pat_kicking_success_percent(self):
+        self.assertEqual(self.team.pat_kicking_success_percent, 94.3)
+    def test_pat_kicking_attempts(self):
+        self.assertEqual(self.team.pat_kicking_attempts, 35)
+    def test_pat_kicking_made(self):
+        self.assertEqual(self.team.pat_kicking_made, 33)
+    def test_two_point_conversion_success_percent(self):
+        self.assertEqual(self.team.two_point_conversion_success_percent, 50.0)
+    def test_two_point_conversion_attempts(self):
+        self.assertEqual(self.team.two_point_conversion_attempts, 2)
+    def test_two_point_conversions_made(self):
+        self.assertEqual(self.team.two_point_conversions_made, 1)
 
     def test_points_per_game_opp(self):
         self.assertEqual(self.team.points_per_game_opp, 33.9)
@@ -237,23 +448,33 @@ class TestTeamHomePageParser(unittest.TestCase):
         self.assertEqual(self.team.third_down_conversion_attempts_opp, 164)
     def test_third_down_conversions_opp(self):
         self.assertEqual(self.team.third_down_conversions_opp, 80)
-    # def test_fourth_down_conversion_attempts_opp(self):
-    #     self.assertEqual(self.team.fourth_down_conversion_attempts_opp, 18)
-    # def test_fourth_down_conversions_opp(self):
-    #     self.assertEqual(self.team.fourth_down_conversions_opp, 12)
-    # def test_red_zone_attempts_opp(self):
-    #     self.assertEqual(self.team.red_zone_attempts_opp, 50)
-    # def test_red_zone_scores_opp(self):
-    #     self.assertEqual(self.team.red_zone_scores_opp, 40)
-    # def test_field_goal_attempts_opp(self):
-    #     self.assertEqual(self.team.field_goal_attempts_opp, 18)
-    # def test_field_goals_opp(self):
-    #     self.assertEqual(self.team.field_goals_opp, 8)
-    # def test_pat_kicking_attempts_opp(self):
-    #     self.assertEqual(self.team.pat_kicking_attempts_opp, 54)
-    # def test_pat_kicking_made_opp(self):
-    #     self.assertEqual(self.team.pat_kicking_made_opp, 51)
-    # def test_two_point_conversion_attempts_opp(self):
-    #     self.assertEqual(self.team.two_point_conversion_attempts_opp, 1)
-    # def test_two_point_conversions_made_opp(self):
-    #     self.assertEqual(self.team.two_point_conversions_made_opp, 0)
+    def test_fourth_down_conversion_percent_opp(self):
+        self.assertEqual(self.team.fourth_down_conversion_percent_opp, 66.67)
+    def test_fourth_down_conversion_attempts_opp(self):
+        self.assertEqual(self.team.fourth_down_conversion_attempts_opp, 18)
+    def test_fourth_down_conversions_opp(self):
+        self.assertEqual(self.team.fourth_down_conversions_opp, 12)
+    def test_red_zone_success_percent_opp(self):
+        self.assertEqual(self.team.red_zone_success_percent_opp, 80.0)
+    def test_red_zone_attempts_opp(self):
+        self.assertEqual(self.team.red_zone_attempts_opp, 50)
+    def test_red_zone_scores_opp(self):
+        self.assertEqual(self.team.red_zone_scores_opp, 40)
+    def test_field_goal_success_percent_opp(self):
+        self.assertEqual(self.team.field_goal_success_percent_opp, 44.4)
+    def test_field_goal_attempts_opp(self):
+        self.assertEqual(self.team.field_goal_attempts_opp, 18)
+    def test_field_goals_opp(self):
+        self.assertEqual(self.team.field_goals_opp, 8)
+    def test_pat_kicking_success_percent_opp(self):
+        self.assertEqual(self.team.pat_kicking_success_percent_opp, 94.4)
+    def test_pat_kicking_attempts_opp(self):
+        self.assertEqual(self.team.pat_kicking_attempts_opp, 54)
+    def test_pat_kicking_made_opp(self):
+        self.assertEqual(self.team.pat_kicking_made_opp, 51)
+    def test_two_point_conversion_success_percent_opp(self):
+        self.assertEqual(self.team.two_point_conversion_success_percent_opp, 0.0)
+    def test_two_point_conversion_attempts_opp(self):
+        self.assertEqual(self.team.two_point_conversion_attempts_opp, 1)
+    def test_two_point_conversions_made_opp(self):
+        self.assertEqual(self.team.two_point_conversions_made_opp, 0)

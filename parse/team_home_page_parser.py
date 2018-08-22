@@ -1,53 +1,6 @@
-import sys
-
 from html.parser import HTMLParser
-from team import Team
-
-class SimpleParser(object):
-    def __init__(self, name, team):
-        self.name = name
-        self.team = team
-
-class StringParser(SimpleParser):
-    def parse(self, data):
-        setattr(self.team, self.name, str(data))
-
-class IntParser(SimpleParser):
-    def parse(self, data):
-        setattr(self.team, self.name, int(data))
-
-class FloatParser(SimpleParser):
-    def parse(self, data):
-        setattr(self.team, self.name, float(data))
-
-class PercentParser(SimpleParser):
-    def parse(self, data):
-        setattr(self.team, self.name, float(data.strip('%')))
-
-class SplitParser(object):
-    def __init__(self, names, team, _type, indexes):
-        self.names = names
-        self.team = team
-        self._type = _type
-        self.indexes = indexes
-        if not self.indexes:
-            self.indexes = list(range(len(self.names)))
-        assert(isinstance(self.names, list))
-        assert(isinstance(self.indexes, list))
-
-    def parse(self, data):
-        d = data.split(' - ')
-        for i, name in zip(self.indexes, self.names):
-            setattr(self.team, name, self._type(d[i]))
-
-class SplitIntParser(SplitParser):
-    def __init__(self, names, team, indexes=None):
-        super().__init__(names, team, int, indexes)
-
-class SplitFloatParser(SplitParser):
-    def __init__(self, names, team, indexes=None):
-        super().__init__(names, team, float, indexes)
-
+from cfb_stats.parse.parsers import *
+from cfb_stats.common.team import Team
 
 class TeamHomePageParser(HTMLParser):
     def __init__(self):
@@ -134,7 +87,36 @@ class TeamHomePageParser(HTMLParser):
             None,
             SplitIntParser(['third_down_conversion_attempts', 'third_down_conversions'], self.team),
             SplitIntParser(['third_down_conversion_attempts_opp', 'third_down_conversions_opp'], self.team),
-
+            None,
+            PercentParser('fourth_down_conversion_percent', self.team),
+            PercentParser('fourth_down_conversion_percent_opp', self.team),
+            None,
+            SplitIntParser(['fourth_down_conversion_attempts', 'fourth_down_conversions'], self.team),
+            SplitIntParser(['fourth_down_conversion_attempts_opp', 'fourth_down_conversions_opp'], self.team),
+            None,
+            PercentParser('red_zone_success_percent', self.team),
+            PercentParser('red_zone_success_percent_opp', self.team),
+            None,
+            SplitIntParser(['red_zone_attempts', 'red_zone_scores'], self.team),
+            SplitIntParser(['red_zone_attempts_opp', 'red_zone_scores_opp'], self.team),
+            None,
+            PercentParser('field_goal_success_percent', self.team),
+            PercentParser('field_goal_success_percent_opp', self.team),
+            None,
+            SplitIntParser(['field_goal_attempts', 'field_goals'], self.team),
+            SplitIntParser(['field_goal_attempts_opp', 'field_goals_opp'], self.team),
+            None,
+            PercentParser('pat_kicking_success_percent', self.team),
+            PercentParser('pat_kicking_success_percent_opp', self.team),
+            None,
+            SplitIntParser(['pat_kicking_attempts', 'pat_kicking_made'], self.team),
+            SplitIntParser(['pat_kicking_attempts_opp', 'pat_kicking_made_opp'], self.team),
+            None,
+            PercentParser('two_point_conversion_success_percent', self.team),
+            PercentParser('two_point_conversion_success_percent_opp', self.team),
+            None,
+            SplitIntParser(['two_point_conversion_attempts', 'two_point_conversions_made'], self.team),
+            SplitIntParser(['two_point_conversion_attempts_opp', 'two_point_conversions_made_opp'], self.team),
         ]
 
     def handle_starttag(self, tag, attrs):

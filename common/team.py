@@ -54,12 +54,16 @@ class Team(object):
         self.fourth_down_conversion_percent = None
         self.fourth_down_conversion_attempts = None
         self.fourth_down_conversions = None
+        self.red_zone_success_percent = None
         self.red_zone_attempts = None
         self.red_zone_scores = None
+        self.field_goal_success_percent = None
         self.field_goal_attempts = None
         self.field_goals = None
+        self.pat_kicking_success_percent = None
         self.pat_kicking_attempts = None
         self.pat_kicking_made = None
+        self.two_point_conversion_success_percent = None
         self.two_point_conversion_attempts = None
         self.two_point_conversions_made = None
 
@@ -107,11 +111,15 @@ class Team(object):
         self.fourth_down_conversion_percent_opp = None
         self.fourth_down_conversion_attempts_opp = None
         self.fourth_down_conversions_opp = None
+        self.red_zone_success_percent_opp = None
         self.red_zone_attempts_opp = None
         self.red_zone_scores_opp = None
+        self.field_goal_success_percent_opp = None
         self.field_goal_attempts_opp = None
         self.field_goals_opp = None
+        self.pat_kicking_success_percent_opp = None
         self.pat_kicking_attempts_opp = None
         self.pat_kicking_made_opp = None
+        self.two_point_conversion_success_percent_opp = None
         self.two_point_conversion_attempts_opp = None
         self.two_point_conversions_made_opp = None
