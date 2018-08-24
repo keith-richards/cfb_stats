@@ -7,6 +7,7 @@
 class Team(object):
     def __init__(self):
         super().__init__()
+        self.identifier = None
         self.name = None
 
         self.points_per_game = None

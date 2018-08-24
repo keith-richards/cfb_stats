@@ -11,6 +11,7 @@ class StringParser(SimpleParser):
 class IntParser(SimpleParser):
     def parse(self, data):
         data = data.strip()
+        data = data.replace(',', '')
         if data == '-':
             setattr(self.team, self.name, 0)
         else:
@@ -19,6 +20,7 @@ class IntParser(SimpleParser):
 class FloatParser(SimpleParser):
     def parse(self, data):
         data = data.strip()
+        data = data.replace(',', '')
         if data == '-':
             setattr(self.team, self.name, 0.0)
         else:
@@ -50,6 +52,7 @@ class SplitParser(object):
             if val == '-':
                 setattr(self.team, self.name, self._type(0.0))
             else:
+                val = val.replace(',', '')
                 setattr(self.team, name, self._type(val))
 
 class SplitIntParser(SplitParser):

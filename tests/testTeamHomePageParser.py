@@ -1,14 +1,12 @@
 import unittest
 from cfb_stats.parse.team_home_page_parser import TeamHomePageParser
 
+parser = TeamHomePageParser()
+
 class TestTeamHomePageParserEastCarolina(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.parser = TeamHomePageParser()
-        with open("east_carolina_home.html", "r") as f:
-            for line in f.readlines():
-                cls.parser.feed(line)
-        cls.team = cls.parser.team
+        cls.team = parser.parse("east_carolina_home.html")
 
     def test_name(self):
         self.assertEqual(self.team.name, "East Carolina")
@@ -243,11 +241,7 @@ class TestTeamHomePageParserEastCarolina(unittest.TestCase):
 class TestTeamHomePageParserHawaii(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.parser = TeamHomePageParser()
-        with open("hawaii_home.html", "r") as f:
-            for line in f.readlines():
-                cls.parser.feed(line)
-        cls.team = cls.parser.team
+        cls.team = parser.parse("hawaii_home.html")
 
     def test_name(self):
         self.assertEqual(self.team.name, "Hawai'i")

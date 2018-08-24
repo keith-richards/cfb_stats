@@ -1,0 +1,752 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<title>cfbstats.com - College Football Statistics</title>
+<link rel="stylesheet" href="http://www.cfbstats.com/blog/wp-content/themes/cfbstats/style.css" type="text/css" media="screen" />
+<link rel='dns-prefetch' href='//s.w.org' />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.1.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	var mi_version         = '7.1.0';
+	var mi_track_user      = true;
+	var mi_no_track_reason = '';
+	
+	var disableStr = 'ga-disable-UA-10344841-1';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+	
+	if ( mi_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+		__gaTracker('create', 'UA-10344841-1', 'auto');
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('send','pageview');
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + mi_no_track_reason );
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+					})();
+		}
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.cfbstats.com\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls","inbound_paths":"","home_url":"http:\/\/www.cfbstats.com\/blog","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.cfbstats.com/blog/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend.min.js?ver=7.1.0'></script>
+<link rel='https://api.w.org/' href='http://www.cfbstats.com/blog/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.cfbstats.com/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.cfbstats.com/blog/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.8" />
+
+<style type="text/css" media="screen">
+@import url(http://www.cfbstats.com/blog/wp-content/plugins/wp-table/wp-table.css);
+</style>
+<!-- START Drew's Adds -->
+<script type="text/javascript" src="http://coachesbythenumbers.com/wp-content/custom-php/jquery/jquery.min.js?version=133"></script>
+<script type="text/javascript" src="http://coachesbythenumbers.com/wp-content/custom-php/cfbstats.js"></script>
+<link rel="image_src" type="image/jpeg" href="http://coachesbythenumbers.com/wp-content/custom-php/images/socialLogo.png" />
+
+<link rel="stylesheet" href="http://coachesbythenumbers.com/wp-content/custom-php/bootstrap/css/bootstrap.min.css?version=1">
+<link rel="stylesheet" href="http://coachesbythenumbers.com/wp-content/custom-php/bootstrap/css/bootstrap-theme.min.css?version=1">
+<link rel="stylesheet" href="http://coachesbythenumbers.com/wp-content/custom-php/cfbstats.css">
+
+<!-- Start DFP SETUP - Header Tags -->
+<script type='text/javascript'>
+    var gptadslots=[], googletag = googletag || {}; googletag.cmd = googletag.cmd || [];
+    (function(){ var gads = document.createElement('script');
+        gads.async = true; gads.type = 'text/javascript';
+        var useSSL = 'https:' == document.location.protocol;
+        gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(gads, node);
+    })();
+</script>
+<script type='text/javascript' src='https://img.bnqt.com/lib/js/sdpdfphelper.js'></script>
+<script type='text/javascript'>
+    googletag.cmd.push(function() {
+        googletag.pubads().enableAsyncRendering(); googletag.pubads().enableSingleRequest();
+        googletag.pubads().setTargeting('title', sdpTargeting.title)
+            .setTargeting('targetPaths', sdpTargeting.targetPaths)
+            .setTargeting('fullPath', sdpTargeting.fullPath)
+            .setTargeting('queryStr', sdpTargeting.queryStr)
+            .setTargeting('domainName', sdpTargeting.domainName);
+    });
+</script>
+<!-- DFP SETUP end -->
+<!-- END Drew's Adds -->
+
+</head>
+<body>
+<div id="wrapper">
+<div id="breadcrumb">
+  <span class="label">You are here:</span>
+  <span class="selected">Home</span>
+</div> <!-- breadcrumb -->
+
+<!-- New navbar, added by Drew -->
+<nav class="navbar navbar-default navbar-static-top navbar-inverse navbar-thin" role="navigation" style="margin-bottom:0px;">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <img src="http://coachesbythenumbers.com/wp-content/custom-php/images/sportsourcenav.png" width="210" style="border:0;margin-top:13px"/>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-nav-thin navbar-right">
+        <li><a href="mailto:team@sportsourceanalytics.com">Advertise?</a></li>
+        <li><a href="mailto:feedback@cfbstats.com">Contact Us</a></li>
+        <li><a href="https://twitter.com/SportSourceA"><img src="http://coachesbythenumbers.com/wp-content/custom-php/images/twitter_icon_24.png" width="14" style="margin-bottom:5px"/> @SportSourceA</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div id="globalHeader">
+  <a id="imagemap" href="/"></a>
+  <ul id="globalNav">
+    <li><a href="/">Home</a></li>
+    <li><a href="/2017/national/index.html">National</a></li>
+    <li><a href="/2017/conference/index.html">Conferences</a></li>
+    <li><a href="/2017/team/index.html">Teams</a></li>
+    <li><a href="/2017/player/index.html">Players</a></li>
+  </ul>
+</div> <!-- globalHeader -->
+
+	<div id="content">
+	<div id="middleColumn">
+
+	<div class="mels-header">
+      <h2 style="text-align: center;">The Ultimate Site for College Football Stats Junkies</h2>
+	<h1>Split Statistics</h1>
+	<p>All stat categories broken down by game location, game result, playing surface, opponent, and month.  Split statistics are provided by <a href="/2011/team/8/rushing/offense/split.html">team</a> and <a href="/2011/player/51/1015536/passing/split.html">player</a>.</p>
+	<h1>Situational Statistics</h1>
+	<p>Rushing, passing, and receiving broken down by half, quarter, down and distance, field position, and score.  Situational statistics are provided by <a href="/2011/team/365/rushing/offense/situational.html">team</a> and <a href="/2011/player/674/1018393/passing/situational.html">player</a>.</p>
+	<h1>Leader Boards</h1>
+	<p>Sortable <a href="/2017/national/index.html">national</a> and <a href="/2017/conference/index.html">conference</a> leaders for teams and players, for all games and by split statistics.</p>
+	<p class="feedback">Feedback is appreciated and can be sent to <a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#111;&#x3a;&#102;&#x65;&#x65;&#100;&#x62;&#97;&#x63;&#107;&#64;&#x63;&#x66;&#98;&#115;&#x74;&#97;&#116;&#115;&#x2e;&#99;&#x6f;&#x6d;">&#102;&#x65;&#x65;&#100;&#x62;&#97;&#x63;&#107;&#64;&#x63;&#x66;&#98;&#115;&#x74;&#97;&#116;&#115;&#x2e;&#99;&#x6f;&#x6d;</a>.</p>
+
+<div style="width:100%; text-align: center; margin-top: 20px; margin-bottom: 10px;">
+<div style="display: inline-block;">
+<!--
+<div style="float: left; margin-right: 30px;">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd" value="_s-xclick" /> <input type="hidden" name="hosted_button_id" value="5DM8HAWK2X9LQ" /> <input type="image" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" alt="PayPal - The safer, easier way to pay online!" /><img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" /></form>
+</div>
+-->
+<div style="float: right;">
+<a href="https://twitter.com/cfbstats" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @cfbstats</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+</div>
+</div>
+
+  <div class="post-content clearfix">
+    <h2 style="text-align: center">Want to work with the data directly?</h2>
+    <hr style="color: #0071BB; background-color: #0071BB; height: 3px; width:550px" />
+
+    <p><span style="color:#555;font-size:12px"><br />
+    SportSource Analytics is the industry leader when it comes to college football
+    data.<br />
+    <br />
+    The same data sets we used to power our platforms (including cfbstats.com), we make
+    available and affordable to the entire college football analytics
+    community.<br /></span></p>
+
+    <h2 style="text-align: center">Why Our Data?</h2>
+    <hr style="color: #0071BB; background-color: #0071BB; height: 3px; width:550px" />
+
+    <table>
+      <tbody>
+        <tr>
+          <td style="text-align:center" width="75"><span style=
+          "color:green;font-size:48px;font-weight: bold"><img src=
+          "https://s.w.org/images/core/emoji/72x72/2611.png" alt="&#9745;" class="emoji"
+          draggable="false" /></span></td>
+
+          <td>
+            <h4 class="media-heading" style="padding-top: 10px">Certified</h4>
+
+            <p>Our data set is the official data set of the <a href=
+            "http://www.collegefootballplayoff.com/about-the-rankings">College Football
+            Playoff</a>. It is also used by hundreds of companies, bloggers, websites,
+            college teams, professional teams, and fans.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center"><span style=
+          "color:green;font-size:48px;font-weight: bold">&#8635;</span></td>
+
+          <td>
+            <h4 class="media-heading" style="padding-top: 10px">Complete</h4>
+
+            <p>Our data set has every play of every game for all 130 FBS Teams.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center"><span style=
+          "color:green;font-size:48px;font-weight: bold">$</span></td>
+
+          <td>
+            <h4 class="media-heading" style="padding-top: 10px">Cost Effective</h4>
+
+            <p>Save tens of thousands of dollars in trying to aggregate this data
+            manually.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center"><span style=
+          "color:green;font-size:48px;font-weight: bold"><img src=
+          "https://s.w.org/images/core/emoji/72x72/267b.png" alt="&#9851;" class="emoji"
+          draggable="false" /></span></td>
+
+          <td>
+            <h4 class="media-heading" style="padding-top: 10px">Extensible</h4>
+
+            <p>Our CSV (Comma Separated Values) format can easily be imported into any
+            spreadsheet or database in seconds.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center"><span style=
+          "color:green;font-size:48px;font-weight: bold"><img src=
+          "https://s.w.org/images/core/emoji/72x72/1f550.png" alt="&#128336;" class=
+          "emoji" draggable="false" /></span></td>
+
+          <td>
+            <h4 class="media-heading" style="padding-top: 10px">Guaranteed Updates</h4>
+
+            <p>Our files are updated frequently during the week and every Sunday morning
+            after all the weeks games are played.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 style="text-align: center">Our Data Packages</h2>
+    <hr style="color: #0071BB; background-color: #0071BB; height: 3px; width:550px" />
+
+    <p style="padding-top: 8px">Below are the three main data packages that we offer.</p>
+
+    <p><strong>Basic Package</strong><br />
+    The Basic Package provides a very robust set of data targeted at those getting
+    started with analytics. This package is also perfect for fantasy players trying to
+    gear up for the upcoming season.<br />
+    <br />
+    <strong>Advanced Package</strong><br />
+    This package is designed to have the lowest level data required to perform very
+    detailed analytics. It includes detail of every play that is run for all FBS Teams in
+    addition to all of the data in the Basic Package. Both commerical and non-commerical
+    packages are available.<br />
+    <br />
+    <strong>Complete Package</strong><br />
+    This package provides all of the detail of the Advanced Package in addition to a
+    historical data set going back to 2005. This set is perfect for performing trending
+    and regression analysis over 10+ years of data. Both commerical and non-commercial
+    packages are available.</p>
+
+    <table class="packages" width="100%">
+      <tbody>
+        <tr>
+          <td style="border:0"></td>
+
+          <th style="text-align: center; text-transform: none;font-weight: bold">
+          Basic</th>
+
+          <th style="text-align: center; text-transform: none;font-weight: bold">
+          Advanced</th>
+
+          <th style="text-align: center; text-transform: none;font-weight: bold">
+          Complete</th>
+        </tr>
+
+        <tr style="background: #eee">
+          <th>Player Rosters</th>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+        </tr>
+
+        <tr>
+          <th>Player Statistics</th>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+        </tr>
+
+        <tr style="background: #eee">
+          <th>Team Data</th>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+        </tr>
+
+        <tr>
+          <th>Game Data</th>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+        </tr>
+
+        <tr style="background: #eee">
+          <th>Offensive Data</th>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+        </tr>
+
+        <tr>
+          <th>Defensive Data</th>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+        </tr>
+
+        <tr style="background: #eee">
+          <th>Special Teams Data</th>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+        </tr>
+
+        <tr>
+          <th>Detailed Drive/Possession Data</th>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+        </tr>
+
+        <tr style="background: #eee">
+          <th>Detailed Play By Play Data</th>
+
+          <td style="text-align: center;"><span style=
+          "color:gray; font-weight:bold;font-size:18px"><img src=
+          "https://s.w.org/images/core/emoji/72x72/2716.png" alt="&#10006;" class="emoji"
+          draggable="false" /></span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+        </tr>
+
+        <tr>
+          <th>Historical Data (2005-2018)</th>
+
+          <td style="text-align: center;"><span style=
+          "color:gray; font-weight:bold;font-size:18px"><img src=
+          "https://s.w.org/images/core/emoji/72x72/2716.png" alt="&#10006;" class="emoji"
+          draggable="false" /></span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:gray; font-weight:bold;font-size:18px"><img src=
+          "https://s.w.org/images/core/emoji/72x72/2716.png" alt="&#10006;" class="emoji"
+          draggable="false" /></span></td>
+
+          <td style="text-align: center;"><span style=
+          "color:green; font-weight:bold;font-size:18px">&#10003;</span></td>
+        </tr>
+
+        <tr style="background: #eee">
+          <th>Cost</th>
+
+          <td style="text-align: center; font-size:16px;"><strong>$350</strong></td>
+
+          <td style="text-align: center;"><a href=
+          "mailto:team@sportsourceanalytics.com">Contact Us</a></td>
+
+          <td style="text-align: center;"><a href=
+          "mailto:team@sportsourceanalytics.com">Contact Us</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><span><span style="color:green; font-size:18px">&#9733;</span> Sign up before
+    August 15th for our Basic Package and get the early season discount price of
+    $299.</span></p>
+
+    <h2 style="text-align: center">Specifications</h2>
+    <hr style="color: #0071BB; background-color: #0071BB; height: 3px; width:550px" />
+
+    <p style="padding-top: 8px;">All of the data is provided via a compressed zip file.
+    This zip file contains several CSV (Comma Separated Value) files. The files are
+    self-explanatory and each file has detailed column headers that define the statistics
+    covered in the file. There is also a RELEASE.txt file that has a data dictionary to
+    help users work with the files.</p>
+
+    <p style="padding-top: 8px"><span style=
+    "color:#428bca;font-size:18px; font-weight:bold">&#8675;</span>&nbsp;<a href=
+    "http://coachesbythenumbers.com/wp-content/custom-php/sportsource-data-sample-advanced.zip">Download</a>
+    our sample Advanced Package file, which is the complete 2005 Season Advanced Package
+    file.</p>
+
+    <p style="padding-top: 8px"><span style=
+    "color:#428bca;font-size:18px; font-weight:bold">&#8675;</span>&nbsp;<a href=
+    "http://coachesbythenumbers.com/wp-content/custom-php/sportsource-data-sample-basic.zip">Download</a>
+    our sample Basic Package file, which is the complete 2005 Basic Package file.</p>
+
+    <h2 style="text-align: center">Want to learn more?</h2>
+    <hr style="color: #0071BB; background-color: #0071BB; height: 3px; width:550px" />
+
+    <p style="padding-top: 8px">Contact us at <a href=
+    "mailto:team@sportsourceanalytics.com">team@sportsourceanalytics.com</a> for sales
+    information and pricing.</p>
+  </div>
+	</div>
+	<div id="footer">
+	<p>Copyright &copy; 2006-2018 www.cfbstats.com All rights reserved.</p>
+	<p><a href="/?page_id=4">Terms of Use</a></p>
+	</div> <!-- footer -->
+	</div> <!-- middleColumn -->
+
+	<div id="rightColumn">
+            <ul>
+			<li class="page_item page-item-957"><a href="http://www.cfbstats.com/blog/college-football-data/">College Football Data</a></li>
+			<li><a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#111;&#x3a;&#102;&#x65;&#x65;&#100;&#x62;&#97;&#x63;&#107;&#64;&#x63;&#x66;&#98;&#115;&#x74;&#97;&#116;&#115;&#x2e;&#99;&#x6f;&#x6d;">Email</a></li>
+
+						<li id="linkcat-3" class="linkcat"><h2>CFB Links</h2>
+				<ul>
+					<li><a href="http://www.thewizofodds.com">The Wizard of Odds</a></li>
+					<li><a href="http://www.footballstudyhall.com/">Football Study Hall</a></li>
+					<li><a href="http://www.bcftoys.com/">BCF Toys</a></li>
+					<li><a href="http://blutarsky.wordpress.com/">Get The Picture</a></li>
+					<li><a href="http://mattsarzsports.com/">College Sports On TV</a></li>
+					<li><a href="http://www.everydayshouldbesaturday.com">Every Day Should Be Saturday</a></li>
+					<li><a href="http://footballmath.blogspot.com/">Football by the Numbers</a></li>
+					<li><a href="http://www.mapgameday.com/">MapGameDay</a></li>
+					<li><a href="http://leftyloon.blogspot.com/">Statistically Speaking</a></li>
+					<li><a href="http://www.fbschedules.com/">FBSchedules.com</a></li>
+					<li><a href="http://www.knowhuddle.com/">Know Huddle</a></li>
+				</ul>
+			</li>
+			<li id="linkcat-4" class="linkcat"><h2>Pro Football Links</h2>
+				<ul>
+					<li><a href="http://www.footballoutsiders.com">Football Outsiders</a></li>
+					<li><a href="http://prodraftguide.net/">Pro Draft Guide</a></li>
+					<li><a href="http://www.nfldraftdog.com/">NFL Draft Dog</a></li>
+				</ul>
+			</li>
+			
+			<li><h2>Archives</h2>
+				<ul>
+					<li><a href='http://www.cfbstats.com/blog/2016/01/'>January 2016</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2013/09/'>September 2013</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2013/01/'>January 2013</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2012/11/'>November 2012</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2010/12/'>December 2010</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2010/11/'>November 2010</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2010/10/'>October 2010</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2010/01/'>January 2010</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2009/12/'>December 2009</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2009/11/'>November 2009</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2009/10/'>October 2009</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2008/11/'>November 2008</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2008/10/'>October 2008</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2008/09/'>September 2008</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2008/02/'>February 2008</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2008/01/'>January 2008</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2007/12/'>December 2007</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2007/11/'>November 2007</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2007/10/'>October 2007</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2007/09/'>September 2007</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2007/08/'>August 2007</a></li>
+	<li><a href='http://www.cfbstats.com/blog/2007/07/'>July 2007</a></li>
+				</ul>
+			</li>
+            </ul>
+	</div> <!-- rightColumn -->
+	</div> <!-- content -->
+<div id="leftColumn">
+<div class="section">
+<ul>
+  <li class="header">Teams</li>
+  <li>
+    <ul class="sub1">
+      <li class="sub1"><a href="/2017/team/721/index.html">Air Force</a></li>
+      <li class="sub1"><a href="/2017/team/5/index.html">Akron</a></li>
+      <li class="sub1"><a href="/2017/team/8/index.html">Alabama</a></li>
+      <li class="sub1"><a href="/2017/team/27/index.html">Appalachian State</a></li>
+      <li class="sub1"><a href="/2017/team/29/index.html">Arizona</a></li>
+      <li class="sub1"><a href="/2017/team/28/index.html">Arizona State</a></li>
+      <li class="sub1"><a href="/2017/team/31/index.html">Arkansas</a></li>
+      <li class="sub1"><a href="/2017/team/30/index.html">Arkansas State</a></li>
+      <li class="sub1"><a href="/2017/team/725/index.html">Army</a></li>
+      <li class="sub1"><a href="/2017/team/37/index.html">Auburn</a></li>
+      <li class="sub1"><a href="/2017/team/77/index.html">BYU</a></li>
+      <li class="sub1"><a href="/2017/team/47/index.html">Ball State</a></li>
+      <li class="sub1"><a href="/2017/team/51/index.html">Baylor</a></li>
+      <li class="sub1"><a href="/2017/team/66/index.html">Boise State</a></li>
+      <li class="sub1"><a href="/2017/team/67/index.html">Boston College</a></li>
+      <li class="sub1"><a href="/2017/team/71/index.html">Bowling Green</a></li>
+      <li class="sub1"><a href="/2017/team/86/index.html">Buffalo</a></li>
+      <li class="sub1"><a href="/2017/team/107/index.html">California</a></li>
+      <li class="sub1"><a href="/2017/team/129/index.html">Central Michigan</a></li>
+      <li class="sub1"><a href="/2017/team/458/index.html">Charlotte</a></li>
+      <li class="sub1"><a href="/2017/team/140/index.html">Cincinnati</a></li>
+      <li class="sub1"><a href="/2017/team/147/index.html">Clemson</a></li>
+      <li class="sub1"><a href="/2017/team/149/index.html">Coastal Carolina</a></li>
+      <li class="sub1"><a href="/2017/team/157/index.html">Colorado</a></li>
+      <li class="sub1"><a href="/2017/team/156/index.html">Colorado State</a></li>
+      <li class="sub1"><a href="/2017/team/164/index.html">Connecticut</a></li>
+      <li class="sub1"><a href="/2017/team/193/index.html">Duke</a></li>
+      <li class="sub1"><a href="/2017/team/196/index.html">East Carolina</a></li>
+      <li class="sub1"><a href="/2017/team/204/index.html">Eastern Michigan</a></li>
+      <li class="sub1"><a href="/2017/team/235/index.html">Florida</a></li>
+      <li class="sub1"><a href="/2017/team/229/index.html">Florida Atlantic</a></li>
+      <li class="sub1"><a href="/2017/team/231/index.html">Florida International</a></li>
+      <li class="sub1"><a href="/2017/team/234/index.html">Florida State</a></li>
+      <li class="sub1"><a href="/2017/team/96/index.html">Fresno State</a></li>
+      <li class="sub1"><a href="/2017/team/257/index.html">Georgia</a></li>
+      <li class="sub1"><a href="/2017/team/253/index.html">Georgia Southern</a></li>
+      <li class="sub1"><a href="/2017/team/254/index.html">Georgia State</a></li>
+      <li class="sub1"><a href="/2017/team/255/index.html">Georgia Tech</a></li>
+      <li class="sub1"><a href="/2017/team/277/index.html">Hawai'i</a></li>
+      <li class="sub1"><a href="/2017/team/288/index.html">Houston</a></li>
+      <li class="sub1"><a href="/2017/team/295/index.html">Idaho</a></li>
+      <li class="sub1"><a href="/2017/team/301/index.html">Illinois</a></li>
+      <li class="sub1"><a href="/2017/team/306/index.html">Indiana</a></li>
+      <li class="sub1"><a href="/2017/team/312/index.html">Iowa</a></li>
+      <li class="sub1"><a href="/2017/team/311/index.html">Iowa State</a></li>
+      <li class="sub1"><a href="/2017/team/328/index.html">Kansas</a></li>
+      <li class="sub1"><a href="/2017/team/327/index.html">Kansas State</a></li>
+      <li class="sub1"><a href="/2017/team/331/index.html">Kent State</a></li>
+      <li class="sub1"><a href="/2017/team/334/index.html">Kentucky</a></li>
+      <li class="sub1"><a href="/2017/team/365/index.html">LSU</a></li>
+      <li class="sub1"><a href="/2017/team/366/index.html">Louisiana Tech</a></li>
+      <li class="sub1"><a href="/2017/team/671/index.html">Louisiana-Lafayette</a></li>
+      <li class="sub1"><a href="/2017/team/498/index.html">Louisiana-Monroe</a></li>
+      <li class="sub1"><a href="/2017/team/367/index.html">Louisville</a></li>
+      <li class="sub1"><a href="/2017/team/388/index.html">Marshall</a></li>
+      <li class="sub1"><a href="/2017/team/392/index.html">Maryland</a></li>
+      <li class="sub1"><a href="/2017/team/400/index.html">Massachusetts</a></li>
+      <li class="sub1"><a href="/2017/team/404/index.html">Memphis</a></li>
+      <li class="sub1"><a href="/2017/team/415/index.html">Miami (Florida)</a></li>
+      <li class="sub1"><a href="/2017/team/414/index.html">Miami (Ohio)</a></li>
+      <li class="sub1"><a href="/2017/team/418/index.html">Michigan</a></li>
+      <li class="sub1"><a href="/2017/team/416/index.html">Michigan State</a></li>
+      <li class="sub1"><a href="/2017/team/419/index.html">Middle Tennessee</a></li>
+      <li class="sub1"><a href="/2017/team/428/index.html">Minnesota</a></li>
+      <li class="sub1"><a href="/2017/team/433/index.html">Mississippi</a></li>
+      <li class="sub1"><a href="/2017/team/430/index.html">Mississippi State</a></li>
+      <li class="sub1"><a href="/2017/team/434/index.html">Missouri</a></li>
+      <li class="sub1"><a href="/2017/team/726/index.html">Navy</a></li>
+      <li class="sub1"><a href="/2017/team/463/index.html">Nebraska</a></li>
+      <li class="sub1"><a href="/2017/team/466/index.html">Nevada</a></li>
+      <li class="sub1"><a href="/2017/team/473/index.html">New Mexico</a></li>
+      <li class="sub1"><a href="/2017/team/472/index.html">New Mexico State</a></li>
+      <li class="sub1"><a href="/2017/team/457/index.html">North Carolina</a></li>
+      <li class="sub1"><a href="/2017/team/490/index.html">North Carolina State</a></li>
+      <li class="sub1"><a href="/2017/team/497/index.html">North Texas</a></li>
+      <li class="sub1"><a href="/2017/team/503/index.html">Northern Illinois</a></li>
+      <li class="sub1"><a href="/2017/team/509/index.html">Northwestern</a></li>
+      <li class="sub1"><a href="/2017/team/513/index.html">Notre Dame</a></li>
+      <li class="sub1"><a href="/2017/team/519/index.html">Ohio</a></li>
+      <li class="sub1"><a href="/2017/team/518/index.html">Ohio State</a></li>
+      <li class="sub1"><a href="/2017/team/522/index.html">Oklahoma</a></li>
+      <li class="sub1"><a href="/2017/team/521/index.html">Oklahoma State</a></li>
+      <li class="sub1"><a href="/2017/team/523/index.html">Old Dominion</a></li>
+      <li class="sub1"><a href="/2017/team/529/index.html">Oregon</a></li>
+      <li class="sub1"><a href="/2017/team/528/index.html">Oregon State</a></li>
+      <li class="sub1"><a href="/2017/team/539/index.html">Penn State</a></li>
+      <li class="sub1"><a href="/2017/team/545/index.html">Pittsburgh</a></li>
+      <li class="sub1"><a href="/2017/team/559/index.html">Purdue</a></li>
+      <li class="sub1"><a href="/2017/team/574/index.html">Rice</a></li>
+      <li class="sub1"><a href="/2017/team/587/index.html">Rutgers</a></li>
+      <li class="sub1"><a href="/2017/team/663/index.html">SMU</a></li>
+      <li class="sub1"><a href="/2017/team/626/index.html">San Diego State</a></li>
+      <li class="sub1"><a href="/2017/team/630/index.html">San Jose State</a></li>
+      <li class="sub1"><a href="/2017/team/646/index.html">South Alabama</a></li>
+      <li class="sub1"><a href="/2017/team/648/index.html">South Carolina</a></li>
+      <li class="sub1"><a href="/2017/team/651/index.html">South Florida</a></li>
+      <li class="sub1"><a href="/2017/team/664/index.html">Southern Mississippi</a></li>
+      <li class="sub1"><a href="/2017/team/674/index.html">Stanford</a></li>
+      <li class="sub1"><a href="/2017/team/688/index.html">Syracuse</a></li>
+      <li class="sub1"><a href="/2017/team/698/index.html">TCU</a></li>
+      <li class="sub1"><a href="/2017/team/690/index.html">Temple</a></li>
+      <li class="sub1"><a href="/2017/team/694/index.html">Tennessee</a></li>
+      <li class="sub1"><a href="/2017/team/703/index.html">Texas</a></li>
+      <li class="sub1"><a href="/2017/team/697/index.html">Texas A&amp;M</a></li>
+      <li class="sub1"><a href="/2017/team/670/index.html">Texas State</a></li>
+      <li class="sub1"><a href="/2017/team/700/index.html">Texas Tech</a></li>
+      <li class="sub1"><a href="/2017/team/709/index.html">Toledo</a></li>
+      <li class="sub1"><a href="/2017/team/716/index.html">Troy</a></li>
+      <li class="sub1"><a href="/2017/team/718/index.html">Tulane</a></li>
+      <li class="sub1"><a href="/2017/team/719/index.html">Tulsa</a></li>
+      <li class="sub1"><a href="/2017/team/9/index.html">UAB</a></li>
+      <li class="sub1"><a href="/2017/team/128/index.html">UCF</a></li>
+      <li class="sub1"><a href="/2017/team/110/index.html">UCLA</a></li>
+      <li class="sub1"><a href="/2017/team/465/index.html">UNLV</a></li>
+      <li class="sub1"><a href="/2017/team/657/index.html">USC</a></li>
+      <li class="sub1"><a href="/2017/team/704/index.html">UTEP</a></li>
+      <li class="sub1"><a href="/2017/team/706/index.html">UTSA</a></li>
+      <li class="sub1"><a href="/2017/team/732/index.html">Utah</a></li>
+      <li class="sub1"><a href="/2017/team/731/index.html">Utah State</a></li>
+      <li class="sub1"><a href="/2017/team/736/index.html">Vanderbilt</a></li>
+      <li class="sub1"><a href="/2017/team/746/index.html">Virginia</a></li>
+      <li class="sub1"><a href="/2017/team/742/index.html">Virginia Tech</a></li>
+      <li class="sub1"><a href="/2017/team/749/index.html">Wake Forest</a></li>
+      <li class="sub1"><a href="/2017/team/756/index.html">Washington</a></li>
+      <li class="sub1"><a href="/2017/team/754/index.html">Washington State</a></li>
+      <li class="sub1"><a href="/2017/team/768/index.html">West Virginia</a></li>
+      <li class="sub1"><a href="/2017/team/772/index.html">Western Kentucky</a></li>
+      <li class="sub1"><a href="/2017/team/774/index.html">Western Michigan</a></li>
+      <li class="sub1"><a href="/2017/team/796/index.html">Wisconsin</a></li>
+      <li class="sub1"><a href="/2017/team/811/index.html">Wyoming</a></li>
+    </ul>
+  </li>
+</ul>
+</div> <!-- section -->
+</div> <!-- leftColumn -->
+<div id="wrapperClear"/>
+
+	<div style="clear:both;"></div>
+</div> <!-- wrapper -->
+<!-- Start of ADS -->
+<div id="usmg_ad__main_sports_skin">
+    <script type='text/javascript'>
+        //googletag.defineSlot('/7103/SMG_CFBStats/skin/sports/main', [1,1], 'usmg_ad__main_sports_skin').addService(googletag.pubads());
+        //googletag.enableServices();
+        //googletag.display('usmg_ad__main_sports_skin');
+    </script>
+</div>
+
+<!-- SMG_CFBStats/skin/sports/general -->
+<div id="usmg_ad__general_sports_skin">
+    <script type='text/javascript'>
+        googletag.defineSlot('/7103/SMG_CFBStats/skin/sports/general', [1,1], 'usmg_ad__general_sports_skin').addService(googletag.pubads());
+        googletag.enableServices();
+        googletag.display('usmg_ad__general_sports_skin');
+    </script>
+</div>
+<br/><br/><br/><br/>
+<!-- End of ADS -->
+<script type='text/javascript' src='http://www.cfbstats.com/blog/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
+</body>
+</html>
