@@ -1,4 +1,3 @@
-
 # Almost all stats have 2 sides:
 # Points Scored
 # Points Scored by Opponent
@@ -7,11 +6,12 @@
 class Team(object):
     def __init__(self):
         super().__init__()
+        # Single stats
         self.identifier = None
         self.name = None
-
-        self.points_per_game = None
         self.games = None
+        # Multi stats
+        self.points_per_game = None
         self.points_scored = None
         self.first_downs = None
         self.rushing_first_downs = None
@@ -67,7 +67,7 @@ class Team(object):
         self.two_point_conversion_success_percent = None
         self.two_point_conversion_attempts = None
         self.two_point_conversions_made = None
-
+        # Opponent Stats
         self.points_per_game_opp = None
         self.points_scored_opp = None
         self.first_downs_opp = None

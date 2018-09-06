@@ -3,6 +3,11 @@ from cfb_stats.parse.team_home_page_parser import TeamHomePageParser
 
 parser = TeamHomePageParser()
 
+class TestTeamHomePageParserUtah(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.team = parser.parse("utah_home.html")
+
 class TestTeamHomePageParserEastCarolina(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

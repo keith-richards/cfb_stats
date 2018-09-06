@@ -1,7 +1,4 @@
-import os
-import sys
 from html.parser import HTMLParser
-import requests
 
 from cfb_stats.parse.parsers import *
 from cfb_stats.common.team import Team
@@ -9,28 +6,18 @@ from cfb_stats.common.team import Team
 class TeamHomePageParser(HTMLParser):
     def __init__(self):
         super().__init__()
-        self.base_uri = None
 
-    def parse(self, uri):
+    def parse(self, filename):
         '''
         The only interface with this class is here, through parse.
         This function will return a team object, containing the parsed data.
         '''
         team = self.__initialize_team()
-        super().reset() # just in case there is bad data left behind
         self.skip = True
         self.stat_index = 0
-        self.base_uri = uri
-        if os.path.exists(uri):
-            with open(uri, "r") as f:
-                for line in f.readlines():
-                    self.feed(line)
-        else:
-            content = requests.get(uri).text
-            for line in content.splitlines():
+        with open(filename, "r") as f:
+            for line in f.readlines():
                 self.feed(line)
-        sys.stdout.write('.')
-        sys.stdout.flush()
         return team
 
     def __initialize_team(self):
@@ -146,14 +133,6 @@ class TeamHomePageParser(HTMLParser):
             SplitIntParser(['two_point_conversion_attempts_opp', 'two_point_conversions_made_opp'], team),
         ]
         return team
-
-    def handle_starttag(self, tag, attrs):
-        # if tag == 'a':
-        #     print(attrs)
-        pass
-
-    def handle_endtag(self, tag):
-        pass#print("Got end", tag)
 
     def handle_data(self, data):
         if data.isspace():
