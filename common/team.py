@@ -4,10 +4,11 @@
 #
 # stats that end with _opp are the latter
 class Team(object):
-    def get_per_game_stat(self, stat):
-        if stat in ['points_per_game', 'points_per_game_opp']:
-            return getattr(self, stat)
-        return float(getattr(self, stat)) / self.games
+    def __getattr__(self, stat):
+        if "_per_game" in stat:
+            stat = stat.replace("_per_game", "")
+            return float(self.__getattribute__(stat)) / self.games
+        return self.__getattribute__(stat)
 
     def __init__(self):
         super().__init__()

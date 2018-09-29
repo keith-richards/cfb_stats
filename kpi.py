@@ -18,7 +18,7 @@ def parse_team_home_pages(filenames, q):
         q.put(parser.parse(f))
 
 def parse_teams(args):
-    team_html_filenames = [os.path.abspath(os.path.join(args.source, p)) for p in os.listdir(args.source)]
+    team_html_filenames = [os.path.abspath(os.path.join(args.source_dir, p)) for p in os.listdir(args.source_dir)]
 
     processes = []
     doneq = multiprocessing.Queue()
@@ -40,7 +40,7 @@ def parse_teams(args):
 def main():
     argparser = argparse.ArgumentParser(description='Rank teams from data from cfbstats.com')
     argparser.add_argument('--procs', help='Multiprocess the parsers.', default=4, type=int)
-    argparser.add_argument('--source', required=True, help='Path to the directory of html containing all team html.')
+    argparser.add_argument('--source_dir', required=True, help='Path to the directory of html containing all team html.')
     args = argparser.parse_args(sys.argv[1:])
 
     teams = parse_teams(args)
