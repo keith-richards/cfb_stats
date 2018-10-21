@@ -7,7 +7,7 @@ class Team(object):
     def __getattr__(self, stat):
         if "_per_game" in stat:
             stat = stat.replace("_per_game", "")
-            return float(self.__getattribute__(stat)) / self.games
+            return float(self.__getattribute__(stat)) / self.__getattribute__("games")
         return self.__getattribute__(stat)
 
     def __init__(self):
